@@ -1,0 +1,44 @@
+<div class="div container">
+    <div class="tableContainer">
+        <h2>Juegos RPG</h2>
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Portada</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Plataformas</th>
+            <th scope="col">Precio</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let game of games">
+            <tr *ngIf="game.categories.includes('rpg')">
+            <td> <img [src]="game.image" [alt]="game.title"> </td>
+            <td>{{game.title}}</td>
+            <td>{{game.platforms}}</td>
+            <ng-container *ngIf="game.purchased == false">
+                    <td>${{game.price}}.00</td>
+                </ng-container>
+            <ng-container *ngIf="game.purchased == true">
+                <td class="form">
+                <button type = "button" (click)="scoreDown(game)" class="btn btn-primary btn-sm">-</button>
+                <div class="outer-star">
+                    <div class="inner-star" [ngStyle]="getScore(game)">
+                    </div>
+                </div>
+                <button type = "button" (click)="scoreUp(game)" class = "btn btn-primary btn-sm">+</button>
+                </td>
+            </ng-container>
+            
+            <td>
+                <ng-container *ngIf="game.price == 0.00 || game.purchased == true; else elseBlock">
+                <a href="#" class="btn btn-primary">Jugar</a>
+                </ng-container>
+                <ng-template #elseBlock>
+                <a href="#" class="btn btn-primary">Comprar</a>
+                </ng-template></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

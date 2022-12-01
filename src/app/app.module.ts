@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { GameListComponent } from './game-list/game-list.component';
 import { RpgListComponent } from './rpg-list/rpg-list.component';
 import { CartComponent } from './cart/cart.component';
@@ -22,6 +23,16 @@ import { InputScoreComponent } from './input-score/input-score.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+=======
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+>>>>>>> parent of 5dc3d87 (Agregados juegos y carruseles)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,28 +9,18 @@ import { Game } from './Game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-  
-  scoreUp(game: Game){
-    this.gamesData.scoreUp(game);
-  }
-  getScore(game: Game){ 
-    return this.gamesData.getScore(game);
-  }
-  scoreDown(event: Event) {
-    this.gamesData.scoreDown(<Game>(<unknown>((<HTMLInputElement>event.target).value)));
-  }
 
-  addToCart(game: Game){
-    
+  games:  Game[] = [];
+  constructor(private cart: GameCartService, private gamesData: GamesDataService) {
   }
-  games:  Game[];
-  constructor(private cart: GameCartService, private gamesData: GamesDataService) { 
-    this.cart,
-    this.gamesData,
-    this.games = gamesData.getAllGames()
-    }
 
   ngOnInit(): void {
+    this.gamesData.getAllGames()
+    .subscribe(games => this.games = games);
+  }
+
+  addToCart(game:Game){
+
   }
 
 }

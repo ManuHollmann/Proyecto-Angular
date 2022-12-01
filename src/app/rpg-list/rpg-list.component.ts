@@ -10,21 +10,12 @@ import { GamesDataService } from '../games-data.service';
 })
 export class RpgListComponent implements OnInit {
   games: Game[];
-  constructor(private cart: GameCartService, private gamesData: GamesDataService) { 
-    this.cart,
-    this.gamesData,
-    this.games = gamesData.getAllGames();
+  constructor(private cart: GameCartService, private gamesData: GamesDataService) {
   }
 
   ngOnInit(): void {
-  }
-
-  scoreDown(game: Game) {
-      this.gamesData.scoreDown(game);
-    }
-
-  scoreUp(game: Game) {
-    this.gamesData.scoreUp(game);
+    this.gamesData.getAllGames()
+    .subscribe(games => this.games = games);
   }
   
   getScore(game: Game){

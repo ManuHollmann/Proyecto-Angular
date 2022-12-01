@@ -21,12 +21,7 @@
                 </ng-container>
             <ng-container *ngIf="game.purchased == true">
                 <td class="form">
-                <button type = "button" (click)="scoreDown(game)" class="btn btn-primary btn-sm">-</button>
-                <div class="outer-star">
-                    <div class="inner-star" [ngStyle]="getScore(game)">
-                    </div>
-                </div>
-                <button type = "button" (click)="scoreUp(game)" class = "btn btn-primary btn-sm">+</button>
+                    <app-input-score [game] = "game"></app-input-score>
                 </td>
             </ng-container>
             

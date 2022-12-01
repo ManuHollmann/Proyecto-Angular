@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { RpgListComponent } from './rpg-list/rpg-list.component';
 import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InputScoreComponent } from './input-score/input-score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameListComponent,
     RpgListComponent,
-    CartComponent
+    CartComponent,
+    InputScoreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

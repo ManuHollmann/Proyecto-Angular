@@ -17,13 +17,7 @@
             <td>{{game.title}}</td>
             <td>{{game.platforms}}</td>
             <td>
-              <button type = "button" value={{game}} (click)="scoreDown($event)" class="btn btn-primary btn-sm">-</button>
-              <div class="outer-star">
-                <div class="inner-star" [ngStyle]="getScore(game)">
-                </div>
-              </div>
-              <button type = "button" (click)="scoreUp(game)" class = "btn btn-primary btn-sm">+</button>
-              {{game.score}}
+              <app-input-score [(score)] = "game.score" [(id)] = "game.id"></app-input-score>
             </td>
             <td>
               <ng-container *ngIf="game.price == 0.00 || game.purchased == true; else elseBlock">

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { GameCartService } from '../game-cart.service';
 import { Game } from '../game-list/Game';
 import { GamesDataService } from '../games-data.service';
 
@@ -10,34 +9,35 @@ import { GamesDataService } from '../games-data.service';
 })
 export class InputScoreComponent implements OnInit {
 
-  constructor(private cart: GameCartService, private gamesData: GamesDataService) { }
+  constructor(private gamesData: GamesDataService) { }
 
   ngOnInit(): void {
   }
 
   @Input()
-  score!: Number;
+  score!: number;
 
   @Input()
-  id!: Number;
+  id!: number;
 
-  @Output() scoreChange:EventEmitter<Number> = new EventEmitter<Number>();
+  @Output() scoreChange:EventEmitter<number> = new EventEmitter<number>();
   
-  scoreDown(id: Number) {
+  scoreDown(id: number) {
+    console.log([id],[this.id])
     if(this.score > 9){
-      this.gamesData.scoreChange(this.id, -10);
+      this.score = this.score -10;
       this.scoreChange.emit(this.score);
     }
   }
 
-  scoreUp(id: Number) {
-    if(this.score < 89){
-      this.gamesData.scoreChange(this.id, +10);
+  scoreUp(id: number) {
+    if(this.score < 91 && id == this.id){
+      this.score = this.score +10;
       this.scoreChange.emit(this.score);
     }
   }
 
-  getScore(id: Number){
+  getScore(id: number){
     return this.gamesData.getScore(id);
   }
 

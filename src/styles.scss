@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Lato', sans-serif;
+    color: #FAF4F4;
+}
+
+.headerNav{
+    color: #FAF4F4;
+}
+
+body{
+    background-color:#1C1C28;
+}
+
+.tableContainer{
+    background-color: #15151E;
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+
+.tableContainer h2{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.headerNav{
+    background-color: #596AFE;
+}
+
+.outer-star {
+  position: relative;
+  display: inline-block
+}
+
+.inner-star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: hidden
+}
+
+.outer-star::before {
+  content: '★★★★★';
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900
+}
+
+.inner-star::before {
+  content: '★★★★★';
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900;
+  color: orange;
+}

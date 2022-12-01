@@ -17,7 +17,7 @@
             <td>{{game.title}}</td>
             <td>{{game.platforms}}</td>
             <td>
-              <app-input-score [(score)] = "game.score" [(id)] = "game.id"></app-input-score>
+              <app-input-score [(score)] = "game.score" [id] = "game.id"></app-input-score>
             </td>
             <td>
               <ng-container *ngIf="game.price == 0.00 || game.purchased == true; else elseBlock">

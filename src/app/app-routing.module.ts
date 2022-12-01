@@ -1,21 +1,31 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { GameListComponent } from './game-list/game-list.component';
+import { RecommendedListComponent } from './recommended-list/recommended-list.component';
 import { RpgListComponent } from './rpg-list/rpg-list.component';
+import { SportListComponent } from './sport-list/sport-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'juegos',
+    redirectTo: 'juegos/',
     pathMatch: 'full'
   },
   {
-    path: 'juegos',
+    path: 'juegos/',
   component: GameListComponent
   },
   {
     path: 'juegos/rpg',
     component: RpgListComponent
+  },
+  {
+    path: 'juegos/deporte',
+    component: SportListComponent
+  },
+  {
+    path: 'juegos/recomendados',
+    component: RecommendedListComponent
   }
 ];
 

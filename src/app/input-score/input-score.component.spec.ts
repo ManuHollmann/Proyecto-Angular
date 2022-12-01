@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RpgListComponent } from './rpg-list.component';
+import { InputScoreComponent } from './input-score.component';
 
-describe('RpgListComponent', () => {
-  let component: RpgListComponent;
-  let fixture: ComponentFixture<RpgListComponent>;
+describe('InputScoreComponent', () => {
+  let component: InputScoreComponent;
+  let fixture: ComponentFixture<InputScoreComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RpgListComponent ]
+      declarations: [ InputScoreComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RpgListComponent);
+    fixture = TestBed.createComponent(InputScoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

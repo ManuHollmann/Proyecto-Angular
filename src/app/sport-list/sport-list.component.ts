@@ -3,10 +3,11 @@ import { Game } from '../game-list/Game';
 import { GamesDataService } from '../games-data.service';
 
 @Component({
-  selector: 'app-rpg-list',
-  templateUrl: './rpg-list.component.html',
+  selector: 'app-sport-list',
+  templateUrl: './sport-list.component.html',
+  styleUrls: ['./sport-list.component.scss']
 })
-export class RpgListComponent implements OnInit {
+export class SportListComponent implements OnInit {
   games: Game[] | undefined;
   constructor(private gamesData: GamesDataService) {
   }
@@ -19,3 +20,4 @@ export class RpgListComponent implements OnInit {
     return this.gamesData.getScore(game.id);
   }
 }
+

@@ -1,1 +1,27 @@
-<p>cart works!</p>
+<div class="div container">
+    <div class="tableContainer">
+        <h2>Carro de compras</h2>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Portada</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Plataformas</th>
+                <th scope="col">Precio</th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody *ngFor = "let game of cartList$ | async">
+                
+                <tr>
+                    <td> <img [src]="game.image" [alt]="game.title"> </td>
+                    <td>{{game.title}} </td>
+                    <td>{{game.platforms}} </td>
+                    <td>${{game.price}}.00 </td>
+                    <td> <a href="#" class="btn btn-primary">Jugar</a> </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

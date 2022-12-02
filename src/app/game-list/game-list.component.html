@@ -20,7 +20,7 @@
               <app-input-score [(score)] = "game.score" [id] = "game.id"></app-input-score>
             </td>
             <td>
-              <ng-container *ngIf="game.price == 0.00 || game.purchased == true; else elseBlock">
+              <ng-container *ngIf="game.purchased == true; else elseBlock">
                 <a href="#" class="btn btn-primary">Jugar</a>
               </ng-container>
               <ng-template #elseBlock>

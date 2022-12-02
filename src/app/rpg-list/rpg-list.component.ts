@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameCartService } from '../game-cart.service';
 import { Game } from '../game-list/Game';
 import { GamesDataService } from '../games-data.service';
 
@@ -8,7 +9,7 @@ import { GamesDataService } from '../games-data.service';
 })
 export class RpgListComponent implements OnInit {
   games: Game[] | undefined;
-  constructor(private gamesData: GamesDataService) {
+  constructor(private gamesData: GamesDataService, private cart: GameCartService) {
   }
 
   ngOnInit(): void {
@@ -17,5 +18,9 @@ export class RpgListComponent implements OnInit {
   
   getScore(game: Game){
     return this.gamesData.getScore(game.id);
+  }
+
+  addToCart(game:Game){
+    this.cart.addToCart(game);
   }
 }

@@ -26,11 +26,11 @@
             </ng-container>
             
             <td>
-                <ng-container *ngIf="game.price == 0.00 || game.purchased == true; else elseBlock">
-                <a href="#" class="btn btn-primary">Jugar</a>
+                <ng-container *ngIf="game.purchased == true; else elseBlock">
+                    <a href="#" class="btn btn-primary">Jugar</a>
                 </ng-container>
                 <ng-template #elseBlock>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                    <button (click)="addToCart(game)" class="btn btn-primary">Comprar</button>
                 </ng-template></td>
             </tr>
             
